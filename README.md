@@ -1,10 +1,10 @@
 <div align="center">
   <h1>zyBLOG_2.0 - 轻量易用的Python Flask博客系统</h1>
-  
-  [![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
-  [![Flask Version](https://img.shields.io/badge/flask-3.1.x-green.svg)](https://flask.palletsprojects.com/)
-  [![License](https://img.shields.io/badge/license-Apache%202.0-orange.svg)](./LICENSE)
-  [![GitHub Stars](https://img.shields.io/github/stars/Athenavi/zb.svg?style=social)](https://github.com/Athenavi/zb/stargazers)
+
+[![Python Version](https://img.shields.io/badge/python-3.12%2B-blue.svg)](https://www.python.org/)
+[![Flask Version](https://img.shields.io/badge/flask-3.1.x-green.svg)](https://flask.palletsprojects.com/)
+[![License](https://img.shields.io/badge/license-Apache%202.0-orange.svg)](./LICENSE)
+[![GitHub Stars](https://img.shields.io/github/stars/Athenavi/zb-v2.svg?style=social)](https://github.com/Athenavi/zb-v2/stargazers)
 
 </div>
 
@@ -17,10 +17,12 @@
 ## 🚀 快速开始
 
 ### 环境要求
+
 - Python 3.12+
-- MySQL 5.7+
+- MySQL 8.0+
 
 ### 宝塔面板部署（新手推荐）
+
 ```bash
 # 安装宝塔面板（国内服务器）
 url=https://download.bt.cn/install/install_lts.sh && \
@@ -35,10 +37,11 @@ bash install_lts.sh ed8484bec
 ```
 
 ### 手动部署
+
 ```bash
 # 克隆仓库
-git clone https://github.com/Athenavi/zb.git
-cd zb
+git clone https://github.com/Athenavi/zb-v2.git
+cd zb-v2
 
 # 初始化环境
 python -m venv venv
@@ -61,17 +64,16 @@ $ python wsgi.py
 ```
 
 (可选) 使用gunicorn运行高性能守护进程实例：
+
 ```bash
 $ touch ./temp/access.log && touch ./temp/error.log
 $ sudo chmod 777 ./temp/access.log && sudo chmod 777 ./temp/error.log
 $ gunicorn --workers 4 --threads 2 --bind 0.0.0.0:9421 --timeout 60 --access-logfile ./temp/access.log --error-logfile ./temp/error.log --daemon src.app:app
 ```
+
 1. 在浏览器中访问 `http://localhost:9421`，即可进入 zyBLOG。
 2. 管理后台 (/dashboard) 默认账号 'test'，默认密码 '123456'。
 
-## 遇到Python版本问题？
-
-- [更多问题](./articles/Linux上python多版本问题.md)
 
 ## 仍然无法运行？
 
@@ -79,15 +81,15 @@ $ gunicorn --workers 4 --threads 2 --bind 0.0.0.0:9421 --timeout 60 --access-log
 
 ## 📚 功能概览
 
-| 模块         | 功能               | 状态 |
-|--------------|------------------|------|
-| 文章管理     | Markdown支持/标签/搜索 | ✅   |
-| 用户系统     | 注册/登录/自定义        | ✅   |
-| 评论系统     | 嵌套评论/审核机制        | ✅   |
-| 后台管理     | 用户管理/内容管理        | ✅   |
-| SEO优化      | 自动生成sitemap/规范链接 | ✅   |
-| 主题系统     | 多主题支持/热切换        | 🚧   |
-| API接口      | RESTful API设计    | 🚧   |
+| 模块    | 功能               | 状态 |
+|-------|------------------|----|
+| 文章管理  | Markdown支持/标签/搜索 | ✅  |
+| 用户系统  | 注册/登录/自定义        | ✅  |
+| 评论系统  | 嵌套评论/审核机制        | ✅  |
+| 后台管理  | 用户管理/内容管理        | ✅  |
+| SEO优化 | 自动生成sitemap/规范链接 | ✅  |
+| 主题系统  | 多主题支持/三方主题/热切换   | ✅  |
+| API接口 | RESTful API设计    | 🚧 |
 
 ## 📸 移动端界面预览
 
@@ -97,6 +99,7 @@ $ gunicorn --workers 4 --threads 2 --bind 0.0.0.0:9421 --timeout 60 --access-log
 ## 🛠️ 开发者指南
 
 ### 项目结构
+
 ```bash
 ├── src/                 # 核心源代码
 ├── templates/           # 前端模板
@@ -130,12 +133,12 @@ newtemplate
 
 ```ini
 [default]
-id = 'cn.7trees.2024'
-title = '2024Theme'
-description = '2024Theme_for_zyBLOG'
+id = 'cn.7trees.2025'
+title = '2025Theme'
+description = '2025Theme_for_zyBLOG'
 author = '7trees'
 authorWebsite = 'https://7trees.cn'
-version = '1.0'
+version = '2.0'
 versionCode = '1'
 updateUrl = ''
 screenshot = 'screenshot.png'
@@ -145,16 +148,18 @@ screenshot = 'screenshot.png'
 
 ## 📈 用户增长
 
-![Star History Chart](https://api.star-history.com/svg?repos=Athenavi/zb&type=Date)
+![Star History Chart](https://api.star-history.com/svg?repos=Athenavi/zb-v2&type=Date)
 
 ## 🤝 开源协议
 
 本项目采用 [Apache License 2.0](./LICENSE) 开源协议，您可以在遵守协议条款的前提下自由使用、修改和分发代码。
+该项目包含由Docsify贡献者开发的软件（https://github.com/docsifyjs/docsify/graphs/contributors）。
+MIT许可证 版权所有（c）2016年至今Docsify贡献者
 
 ## 📬 联系我们
 
 - 示例网站：[7trees.cn](https://7trees.cn)
-- 问题反馈：[GitHub Issues](https://github.com/Athenavi/zb/issues)
+- 问题反馈：[GitHub Issues](https://github.com/Athenavi/zb-v2/issues)
 - 社区讨论：QQ群（暂未开放）
 
 ---
