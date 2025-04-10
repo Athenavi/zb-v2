@@ -68,8 +68,11 @@ def check_db():
 
             # 检查查询结果
             if result:
-                for row in result:
-                    print(row[0], end="/")
+                table_names = [row[0] for row in result]
+                if len(table_names) <= 6:
+                    print("/".join(table_names))
+                else:
+                    print("/".join(table_names[:3] + ["..."] + table_names[-3:]))
                 print(f"Total tables: {len(result)}")
                 print(f"----------------数据库表 预检测---------success")
                 return len(result)
